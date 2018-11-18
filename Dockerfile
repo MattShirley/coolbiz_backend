@@ -26,4 +26,3 @@ EXPOSE 80/tcp
 #ENTRYPOINT ["python", "manage.py"]
 #CMD ["runserver", "0.0.0.0:8000"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
-
