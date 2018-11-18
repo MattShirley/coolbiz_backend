@@ -25,4 +25,5 @@ EXPOSE 80/tcp
 #STOPSIGNAL SIGINT
 #ENTRYPOINT ["python", "manage.py"]
 #CMD ["runserver", "0.0.0.0:8000"]
-CMD python manage.py runserver 0.0.0.0:80
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
