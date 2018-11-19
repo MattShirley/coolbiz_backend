@@ -1,6 +1,6 @@
 # Core
 pytz==2018.5
-Django==2.1.2
+Django==1.11
 django-configurations==2.1
 gunicorn==19.9.0
 newrelic==4.4.1.104
@@ -20,7 +20,7 @@ django-filter==2.0.0
 
 # Developer Tools
 ipdb==0.11
-ipython==7.0.1
+ipython==5.8
 mkdocs==0.17.5
 flake8==3.5.0
 
