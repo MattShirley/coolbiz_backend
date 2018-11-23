@@ -20,9 +20,8 @@ phases:
   build:
     commands:
       # - command
-        - echo $DJANGO_SECRET_KEY
         - pip install -r requirements.txt
-        - python manage.py migrate
+        #- python manage.py migrate
         - python manage.py collectstatic --noinput
       # - command
   #post_build:
