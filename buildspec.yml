@@ -28,10 +28,10 @@ phases:
     #commands:
       # - command
       # - command
-#artifacts:
-  #files:
+artifacts:
+  files:
     # - location
-    # - requirements.txt
+    - '**/*'
     # - location
   #name: $(date +%Y-%m-%d)
   #discard-paths: yes
