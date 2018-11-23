@@ -38,3 +38,14 @@ class Production(Common):
     AWS_S3_OBJECT_PARAMETERS = {
         'CacheControl': 'max-age=86400',
     }
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DJANGO_POSTGRES_DATABASE'),
+            'USER': os.environ.get('DJANGO_POSTGRES_USERNAME'),
+            'PASSWORD': os.environ.get('DJANGO_POSTGRES_PASSWORD'),
+            'HOST': os.environ.get('DJANGO_POSTGRES_HOST'),
+            'PORT': os.environ.get('DJANGO_POSTGRES_PORT'),
+        }
+    }
