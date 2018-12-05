@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Admission
 from .serializers import AdmissionSerializer
 
-class AdmissionViewSet(viewsets.ReadOnlyModelViewSet):
+class AdmissionViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """
