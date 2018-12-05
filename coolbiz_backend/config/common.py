@@ -24,6 +24,7 @@ class Common(Configuration):
 
         # Your apps
         'coolbiz_backend.users',
+        'coolbiz_backend.admission',
 
     )
 

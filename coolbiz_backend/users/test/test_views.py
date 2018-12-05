@@ -10,7 +10,7 @@ from .factories import UserFactory
 
 fake = Faker()
 
-'''
+
 class TestUserListTestCase(APITestCase):
     """
     Tests /users list operations.
@@ -55,4 +55,3 @@ class TestUserDetailTestCase(APITestCase):
 
         user = User.objects.get(pk=self.user.id)
         eq_(user.first_name, new_first_name)
-'''
