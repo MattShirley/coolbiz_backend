@@ -40,6 +40,7 @@ class Common(Configuration):
     )
 
     ALLOWED_HOSTS = ["*"]
+    CORS_ORIGIN_ALLOW_ALL = True
     ROOT_URLCONF = 'coolbiz_backend.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     WSGI_APPLICATION = 'coolbiz_backend.wsgi.application'
