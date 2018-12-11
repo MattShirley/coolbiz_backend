@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from .models import Admission
 from .serializers import AdmissionSerializer
@@ -11,4 +11,7 @@ class AdmissionViewSet(viewsets.ModelViewSet):
     queryset = Admission.objects.all()
     serializer_class = AdmissionSerializer
 
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (
+        IsAuthenticated,
+        AllowAny,
+    )
