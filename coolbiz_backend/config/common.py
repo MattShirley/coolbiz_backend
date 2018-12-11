@@ -32,8 +32,9 @@ class Common(Configuration):
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
-        'corsheaders.middleware.CorsMiddleware',
+        'corsheaders.middleware.CorsMiddleware', # cors
         'django.middleware.common.CommonMiddleware',
+        'corsheaders.middleware.CorsPostCsrfMiddleware', # cors csrf
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
@@ -42,6 +43,7 @@ class Common(Configuration):
 
     ALLOWED_HOSTS = ["*"]
     CORS_ORIGIN_ALLOW_ALL = True
+    CORS_REPLACE_HTTPS_REFERER = True
     ROOT_URLCONF = 'coolbiz_backend.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     WSGI_APPLICATION = 'coolbiz_backend.wsgi.application'
