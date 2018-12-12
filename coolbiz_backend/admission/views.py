@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import parsers, renderers
 
 from .models import Admission
 from .serializers import AdmissionSerializer
@@ -13,6 +14,10 @@ class AdmissionViewSet(viewsets.ModelViewSet):
     """
     queryset = Admission.objects.all()
     serializer_class = AdmissionSerializer
+    throttle_classes = ()
+    permission_classes = ()
+    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
+    renderer_classes = (renderers.JSONRenderer,)
 
     '''
     permission_classes = (
@@ -21,8 +26,6 @@ class AdmissionViewSet(viewsets.ModelViewSet):
     )
     '''
 
-from rest_framework import parsers, renderers
-
 class SanityCheck(APIView):
     """
     List all snippets, or create a new snippet.
@@ -30,7 +33,7 @@ class SanityCheck(APIView):
     throttle_classes = ()
     permission_classes = ()
     parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
-    renderer_classes = (renderers.JSONRenderer,)
+    #renderer_classes = (renderers.JSONRenderer,)
     def get(self, request, format=None):
         return Response({
             'ping': 'pong'
