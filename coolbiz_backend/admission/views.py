@@ -14,17 +14,10 @@ class AdmissionViewSet(viewsets.ModelViewSet):
     """
     queryset = Admission.objects.all()
     serializer_class = AdmissionSerializer
-    #throttle_classes = ()
-    permission_classes = (AllowAny)
-    #parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
-    #renderer_classes = (renderers.JSONRenderer,)
 
-    '''
     permission_classes = (
         IsAuthenticated,
-        AllowAny,
     )
-    '''
 
 class SanityCheck(APIView):
     """
