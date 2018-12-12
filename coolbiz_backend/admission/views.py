@@ -14,10 +14,10 @@ class AdmissionViewSet(viewsets.ModelViewSet):
     """
     queryset = Admission.objects.all()
     serializer_class = AdmissionSerializer
-    throttle_classes = ()
+    #throttle_classes = ()
     permission_classes = ()
-    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
-    renderer_classes = (renderers.JSONRenderer,)
+    #parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
+    #renderer_classes = (renderers.JSONRenderer,)
 
     '''
     permission_classes = (
