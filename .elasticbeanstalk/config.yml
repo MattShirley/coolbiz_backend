@@ -18,3 +18,8 @@ global:
   profile: null
   sc: git
   workspace_type: Application
+files:
+  "/etc/httpd/conf.d/custom.conf":
+      mode: "000644"
+      content : |
+        WSGIPassAuthorization On
