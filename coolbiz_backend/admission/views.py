@@ -14,10 +14,12 @@ class AdmissionViewSet(viewsets.ModelViewSet):
     queryset = Admission.objects.all()
     serializer_class = AdmissionSerializer
 
+    '''
     permission_classes = (
         IsAuthenticated,
         AllowAny,
     )
+    '''
 
 from rest_framework import parsers, renderers
 
