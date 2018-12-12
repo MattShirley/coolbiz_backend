@@ -25,7 +25,6 @@ class Common(Configuration):
         # Your apps
         'coolbiz_backend.users',
         'coolbiz_backend.admission',
-
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/

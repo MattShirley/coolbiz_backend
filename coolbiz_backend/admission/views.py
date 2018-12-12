@@ -19,10 +19,16 @@ class AdmissionViewSet(viewsets.ModelViewSet):
         AllowAny,
     )
 
+from rest_framework import parsers, renderers
+
 class SanityCheck(APIView):
     """
     List all snippets, or create a new snippet.
     """
+    throttle_classes = ()
+    permission_classes = ()
+    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
+    renderer_classes = (renderers.JSONRenderer,)
     def get(self, request, format=None):
         return Response({
             'ping': 'pong'
