@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: CoolbizBackend-env
+    environment: CoolbizBackend-env-2
 environment-defaults:
   CoolbizBackend-env:
     branch: null
