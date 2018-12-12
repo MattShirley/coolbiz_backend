@@ -35,6 +35,8 @@ class SanityCheck(APIView):
     parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
     #renderer_classes = (renderers.JSONRenderer,)
     def get(self, request, format=None):
+        print('authenticated? {}'.format(request.user.is_authenticated()))
         return Response({
-            'ping': 'pong'
+            'ping': 'pong',
+            'authenticated': request.user.is_authenticated()
         })
