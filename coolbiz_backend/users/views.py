@@ -1,9 +1,28 @@
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
 from .models import User
 from .permissions import IsUserOrReadOnly
 from .serializers import CreateUserSerializer, UserSerializer
 
+class CurrentUser(APIView):
+    
+    def get(self, request):
+        if request.user.is_authenticated:
+            return Response(
+                data={
+                    'username': request.user.username,
+                    'first_name': request.user.first_name
+                }
+            )
+        return Response(
+            status=status.HTTP_401_UNAUTHORIZED,
+            data={
+                'error': 'not authenticated'
+            }
+        )
 
 class UserViewSet(mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
