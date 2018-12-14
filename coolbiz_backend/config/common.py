@@ -44,7 +44,7 @@ class Common(Configuration):
     CORS_ORIGIN_ALLOW_ALL = True
     CORS_REPLACE_HTTPS_REFERER = True
     ROOT_URLCONF = 'coolbiz_backend.urls'
-    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY') or 'secretkey'
     WSGI_APPLICATION = 'coolbiz_backend.wsgi.application'
 
     # Email
